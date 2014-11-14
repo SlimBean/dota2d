@@ -6293,6 +6293,10 @@ button.close {
 }
 /*# sourceMappingURL=bootstrap.css.map */
 /* Space out content a bit */
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
 body {
   background: #232425;
   padding-top: 20px;
