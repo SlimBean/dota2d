@@ -1,0 +1,99 @@
+<form action="">
+  <input type="text" ng-model="query" placeholder="Search here!">
+  <select ng-model="order">
+    
+    <option value="Name">Name</option>
+    <option value="ID">Hero ID</option>
+    <option value="Movespeed">Movespeed</option>
+    <option value="BaseStr">Base Strength</option>
+    <option value="BaseAgi">Base Agility</option>
+    <option value="BaseInt">Base Intelligence</option>
+    <option value="Armor">Armor</option>
+    <option value="MagicResist">Magic Resistance</option>
+    <option value="MinDmg">Base Damage</option>
+    <option value="Legs">Legs</option>
+  </select>
+  
+  <div class="radio">
+    <label>
+      <input type="radio" ng-model="direction" name="optionsRadios" id="optionsRadios1" checked>
+      Ascending
+    </label>
+  </div>
+  <div class="radio">
+    <label>
+      <input type="radio" ng-model="direction" name="optionsRadios" id="optionsRadios1" value="reverse">
+      Decending 
+    </label>
+  </div>
+
+</form>  
+<div class="">
+<ul class="hero-list row">
+  <li ng-repeat="item in heroes | filter:query | orderBy:order:direction" class="col-xs-12 stat-{{item.PrimaryStat}}">
+    <h2 class="hero-name" style="text-transform: capitalize">{{item.Name}}</h2>
+    <div class="options">Level: 
+    <select name="" ng-model="level">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+      </select>
+   
+    Attribute Bonus
+    <select name="" ng-model="attributeBonus">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+   
+    </div>
+   <div class="data">
+     <ul class="hero-attributes col-xs-12 col-md-4 col-sm-4 col-lg-4">
+      <li><span class="stat-name">Strength:</span> {{(item.StrGain*level)+(attributeBonus)*2+item.BaseStr-item.StrGain}}</li>
+      <li><span class="stat-name">Agility:</span> {{(item.AgiGain*level)+(attributeBonus)*2+item.BaseAgi-item.AgiGain}}</li>
+      <li><span class="stat-name">Intelligence:</span> {{(item.IntGain*level)+(attributeBonus)*2+item.BaseInt-item.IntGain}}</li>
+    </ul>
+    <ul class="hero-utility col-xs-12 col-md-4 col-sm-4 col-lg-4">
+      <li><span class="stat-name">Movespeed: </span> {{item.Movespeed}}</li>
+      <li><span class="stat-name">Armor: </span> {{item.Armor+((item.AgiGain*level-item.AgiGain)*0.14)+((attributeBonus)*2)*0.14}}</li>
+      <li><span class="stat-name">Magic Resistance: </span> {{item.MagicResist + "%"}}</li>
+    </ul>
+    <ul class="hero-damage col-xs-12 col-md-4 col-sm-4 col-lg-4">
+      <li><span class="stat-name">Base Damage:</span> {{item.MinDmg}} (Max: {{item.MaxDmg}})</li>
+      <li><span class="stat-name">Attacks per Second:</span> {{(1+((item.AgiGain*level)+(attributeBonus)*2+item.BaseAgi-item.AgiGain)*0.01) / item.BaseAttackTime}} <!-- ((1+IAS)/BAT) --> </li>
+      <li><span class="stat-name">DPS:</span> {{((1+((item.AgiGain*level)+(attributeBonus)*2+item.BaseAgi-item.AgiGain)*0.01) / item.BaseAttackTime)*item.MinDmg}} </li>
+    </ul>
+   </div>
+  </li>
+</ul>
+</div>
