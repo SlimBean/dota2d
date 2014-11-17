@@ -16,6 +16,22 @@ angular.module('dota2heroesApp')
     ];
     $http.get('models/heroes.json').success(function(data){
     	$scope.heroes = data;
+      for(var i=0; i<$scope.heroes.length; i++) {
+        switch ($scope.heroes[i].PrimaryStat) {
+          // strength
+          case 0:
+            $scope.heroes[i].PrimaryStatGain = $scope.heroes[i].StrGain;
+            break;
+          // agility
+          case 1:
+            $scope.heroes[i].PrimaryStatGain = $scope.heroes[i].AgiGain;
+            break;
+          // intelligence
+          case 2:
+            $scope.heroes[i].PrimaryStatGain = $scope.heroes[i].IntGain;
+            break;
+        }
+      }
     });
     $scope.order = 'Name';
     $scope.level = 1;
