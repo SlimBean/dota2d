@@ -89,7 +89,7 @@
       <li><span class="stat-name">Magic Resistance: </span> {{item.MagicResist + "%"}}</li>
     </ul>
     <ul class="hero-damage col-xs-12 col-md-4 col-sm-4 col-lg-4">
-      <li><span class="stat-name">Base Damage:</span> {{item.MinDmg}} (Max: {{item.MaxDmg}})</li>
+      <li><span class="stat-name">Damage:</span> {{(item.MinDmg+(item.PrimaryStatGain*level)-item.PrimaryStatGain)}} (Max: {{(item.MaxDmg+(item.PrimaryStatGain*level)-item.PrimaryStatGain)}})</li>
       <li><span class="stat-name">Attacks per Second:</span> {{(1+((item.AgiGain*level)+(attributeBonus)*2+item.BaseAgi-item.AgiGain)*0.01) / item.BaseAttackTime}} <!-- ((1+IAS)/BAT) --> </li>
       <li><span class="stat-name">DPS:</span> {{((1+((item.AgiGain*level)+(attributeBonus)*2+item.BaseAgi-item.AgiGain)*0.01) / item.BaseAttackTime)*(item.MinDmg+(item.PrimaryStatGain*level)-item.PrimaryStatGain)}} </li>
     </ul>
