@@ -1803,7 +1803,7 @@
         "HPRegen": 0.25,
         "ManaRegen": 0.01,
         "Armor": 4.22,
-        "MagicResist" : 25,
+        "MagicResist" : 35,
         "Range": 128,
         "ProjectileSpeed": 0,
         "BaseStr": 23,
