@@ -92,12 +92,9 @@ h1,h2,h3,h4,h5,h6, p {
 
   &> li {
     background: @grayDark;
-    box-shadow: inset 0px 0px 1px 5px #222;
-    border-radius: 23px;
     overflow: hidden;
-    margin-bottom: 6px;
     padding: 12px;
-
+    border-bottom: 1px solid #111;
     &:nth-child(3n+1) {
     clear: left;
     }
@@ -118,29 +115,17 @@ h1,h2,h3,h4,h5,h6, p {
     float: right;
   }
   .stat-name {
-    color: red;
+    color: white;
     display: inline-block;
   }
   .stat-0 {
-    border: 1px solid @strRed;
-
-    .stat-name {
-      color: @strRed;
-    }
+    background: @strRed;
   }
   .stat-1 {
-    border: 1px solid @agiGreen;
-
-    .stat-name {
-      color: @agiGreen;     
-    }
+    background: @agiGreen;
   }
   .stat-2 {
-    border: 1px solid @intBlue;
-
-    .stat-name {
-      color: 1px solid @intBlue;
-    }
+    background: @intBlue;
   }
 }
 .hero-attributes .stat-name {

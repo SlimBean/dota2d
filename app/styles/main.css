@@ -6380,11 +6380,9 @@ p {
 }
 .hero-list > li {
   background: #333333;
-  box-shadow: inset 0px 0px 1px 5px #222;
-  border-radius: 23px;
   overflow: hidden;
-  margin-bottom: 6px;
   padding: 12px;
+  border-bottom: 1px solid #111;
 }
 .hero-list > li:nth-child(3n+1) {
   clear: left;
@@ -6404,26 +6402,17 @@ p {
   float: right;
 }
 .hero-list .stat-name {
-  color: red;
+  color: white;
   display: inline-block;
 }
 .hero-list .stat-0 {
-  border: 1px solid #ff0000;
-}
-.hero-list .stat-0 .stat-name {
-  color: #ff0000;
+  background: #ff0000;
 }
 .hero-list .stat-1 {
-  border: 1px solid #00ff00;
-}
-.hero-list .stat-1 .stat-name {
-  color: #00ff00;
+  background: #00ff00;
 }
 .hero-list .stat-2 {
-  border: 1px solid #0000ff;
-}
-.hero-list .stat-2 .stat-name {
-  color: 1px solid #0000ff;
+  background: #0000ff;
 }
 .hero-attributes .stat-name {
   width: 80px;
